@@ -11,7 +11,7 @@ public class PublicController {
 	@GetMapping(path = "/public")
 	public ResponseEntity<String> demoAPI() {
 		RestTemplate restTemplate = new RestTemplate();
-		String internalAPI = "http://13.200.181.120:8092/internal";
+		String internalAPI = "http://54.225.0.11:8092/internal";
 		return restTemplate.getForEntity(internalAPI, String.class);
 	}
 }
