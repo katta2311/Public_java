@@ -16,6 +16,6 @@ WORKDIR $PROJECT_HOME
 # Copy the .jar file from the host into the container at /app
 COPY target/public-service-0.0.1-SNAPSHOT.jar $PROJECT_HOME/public-service.jar
 
-EXPOSE 8080
+EXPOSE 8082
 # Command to run your application
 ENTRYPOINT ["java", "-jar", "public-service.jar"]
