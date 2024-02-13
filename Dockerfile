@@ -2,7 +2,7 @@
 FROM openjdk:11-ea-9-jdk-sid
 
 # Required for starting application up.
-RUN apk update && apk add /bin/sh
+#RUN apk update && apk add /bin/sh
 
 # Create a directory for jar file
 RUN mkdir -p /opt/app
