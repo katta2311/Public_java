@@ -22,7 +22,10 @@ node{
         }
         sh "docker push katta2311/public:${buildNumber}"
     }
-    
+
+    stage("Rename build number in docker-compose file"){
+        sh" sed 's/buildNumber/${buildNumber}/' docker-compose.yml"
+    }
       stage("Run container"){
         sh "docker run -d --name private -p 8092:8092 --network microservice katta2311/public:${buildNumber}"
      }
