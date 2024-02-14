@@ -21,4 +21,4 @@ services:
       #max_attempts: 5
   networks:
    ingress:
-     external: true
+     external:true
