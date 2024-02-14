@@ -10,15 +10,6 @@ services:
     working_dir: /opt/app
     networks:
     - ingress
-#  deploy: # This will be considered only in docker swarm.
- #   replicas: 3
-  #  update_config:
-   #   parallelism: 1
-    #  delay: 20s
-    #restartPolicy:
-     # condition: on-failure
-      #delay: 10s
-      #max_attempts: 5
   networks:
-   ingress:
-     external:true
+    ingress:
+      external: true
