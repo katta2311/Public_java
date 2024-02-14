@@ -8,9 +8,18 @@ services:
     - 8082:8082
     working_dir: /opt/app
   networks:
-  - microservice
+  - ingress
 
-  deploy: # This will be considered only in docker swarm.
+  private:
+    image: katta2311/private:latest
+    restart: always # This will be ignored if we deploy in the docker swarm
+    ports:
+    - 8092:8092
+    working_dir: /opt/app
+  networks:
+  - ingress
+
+  deploy: # This will be considered only in the docker swarm.
     replicas: 3
     update_config:
       parallelism: 1
@@ -20,5 +29,5 @@ services:
       delay: 10s
       max_attempts: 5
   networks:
-     microservice:
+     ingress:
       external: true
