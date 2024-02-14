@@ -8,6 +8,8 @@ services:
     ports:
     - 8082:8082
     working_dir: /opt/app
+    networks:
+    - ingress
 #  deploy: # This will be considered only in docker swarm.
  #   replicas: 3
   #  update_config:
@@ -18,5 +20,5 @@ services:
       #delay: 10s
       #max_attempts: 5
   networks:
-   - name:  ingress
-   - driver: overlay
+   ingress:
+     external: true
