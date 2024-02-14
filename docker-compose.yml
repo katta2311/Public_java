@@ -10,6 +10,6 @@ services:
     working_dir: /opt/app
     networks:
     - ingress
-  networks:
-    ingress:
-      external: true
+networks:
+  ingress:
+    external: true
