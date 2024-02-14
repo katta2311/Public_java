@@ -19,4 +19,3 @@ services:
       #max_attempts: 5
   networks:
     name: ingress
-      driver: overlay
