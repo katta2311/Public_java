@@ -12,4 +12,4 @@ services:
     - microservice
 networks:
   microservice:
-  - driver: overlay
+    driver: overlay
