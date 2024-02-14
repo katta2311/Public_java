@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  public:
+    image: katta2311/public:latest
+    restart: always # This will be ignored if we deploy in docker swarm
+    ports:
+    - 8082:8082
+    working_dir: /opt/app
+  networks:
+  - microservice
+
+  deploy: # This will be considered only in docker swarm.
+    replicas: 3
+    update_config:
+      parallelism: 1
+      delay: 20s
+    restartPolicy:
+      condition: on-failure
+      delay: 10s
+      max_attempts: 5
+  networks:
+     microservice:
+      external: true
