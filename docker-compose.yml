@@ -8,8 +8,6 @@ services:
     ports:
     - 8082:8082
     working_dir: /opt/app
-  network:
-    -ingress
 #  deploy: # This will be considered only in docker swarm.
  #   replicas: 3
   #  update_config:
