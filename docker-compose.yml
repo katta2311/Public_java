@@ -18,5 +18,5 @@ services:
       #delay: 10s
       #max_attempts: 5
   networks:
-    ingress:
-      - driver: overlay
+   - name:  ingress
+   - driver: overlay
