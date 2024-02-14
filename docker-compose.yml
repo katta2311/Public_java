@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   public:
-    image: katta2311/public:22
+    image: katta2311/public:${buildNumber}
     restart: always # This will be ignored if we deploy in docker swarm
     container_name: public_service
     ports:
