@@ -9,7 +9,7 @@ services:
     - 8082:8082
     working_dir: /opt/app
     networks:
-    - ingress
+    - microservice
 networks:
-  ingress:
-    external: true
+  microservice:
+  - driver: overlay
