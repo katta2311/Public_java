@@ -4,30 +4,30 @@ services:
   public:
     image: katta2311/public:latest
     restart: always # This will be ignored if we deploy in docker swarm
+    container_name: public_service
     ports:
     - 8082:8082
     working_dir: /opt/app
   networks:
   - ingress
-
   private:
     image: katta2311/private:latest
-    restart: always # This will be ignored if we deploy in the docker swarm
+    restart: always # This will be ignored if we deploy in docker swarm
+    container_name: private_service
     ports:
     - 8092:8092
     working_dir: /opt/app
   networks:
   - ingress
-
-  deploy: # This will be considered only in the docker swarm.
-    replicas: 3
-    update_config:
-      parallelism: 1
-      delay: 20s
-    restartPolicy:
-      condition: on-failure
-      delay: 10s
-      max_attempts: 5
+#  deploy: # This will be considered only in docker swarm.
+ #   replicas: 3
+  #  update_config:
+   #   parallelism: 1
+    #  delay: 20s
+    #restartPolicy:
+     # condition: on-failure
+      #delay: 10s
+      #max_attempts: 5
   networks:
      ingress:
-      external: true
+      driver: overlay
