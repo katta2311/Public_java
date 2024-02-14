@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   public:
-    image: katta2311/public:latest
+    image: katta2311/public:22
     restart: always # This will be ignored if we deploy in docker swarm
     container_name: public_service
     ports:
@@ -11,7 +11,7 @@ services:
   networks:
   - ingress
   private:
-    image: katta2311/private:latest
+    image: katta2311/private:8
     restart: always # This will be ignored if we deploy in docker swarm
     container_name: private_service
     ports:
