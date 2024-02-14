@@ -10,15 +10,6 @@ services:
     working_dir: /opt/app
   networks:
     - ingress
-  private:
-    image: katta2311/private:8
-    restart: always # This will be ignored if we deploy in docker swarm
-    container_name: private_service
-    ports:
-    - 8092:8092
-    working_dir: /opt/app
-  networks:
-    - ingress
 #  deploy: # This will be considered only in docker swarm.
  #   replicas: 3
   #  update_config:
